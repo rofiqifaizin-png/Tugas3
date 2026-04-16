@@ -1,0 +1,324 @@
+:root {
+    --space-dark: #050517;
+    --space-deep: #0b0b2a;
+    --accent-blue: #00d2ff;
+    --accent-purple: #9d50bb;
+}
+
+body {
+    background-color: var(--space-dark);
+    color: #ffffff;
+    font-family: 'dosis', sans-serif;
+    overflow-x: hidden;
+}
+
+.navbar-brand {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* Custom Navbar */
+.navbar-custom {
+    padding: 25px 0;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.nav-scrolled {
+    padding: 10px 0;
+    background: rgba(5, 5, 23, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+/* Hero Section */
+/* Hero Section dengan Latar Belakang Foto */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* Gunakan URL gambar pemandangan malam yang tenang */
+    background: linear-gradient(to bottom, rgba(22, 27, 68, 0.5) 0%, #050517 100%),
+        url('waallll.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+/* Tambahkan ini untuk efek cahaya bulan (Opsional) */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+
+/* Siluet (Elemen visual seperti di gambar) */
+/* Perbaikan Siluet agar lebih tegas */
+.silhouette-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40vh;
+    /* Lebih tinggi sedikit */
+    background: linear-gradient(to top, #050517 20%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+    /* Supaya tidak menghalangi klik button */
+}
+
+/* Buttons */
+.btn-primary-custom {
+    background: rgba(255, 255, 255, 0.242);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+}
+
+.btn-outline-custom {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn-outline-custom:hover {
+    background: white;
+    color: var(--space-dark);
+}
+
+.features-section {
+    background-color: #050517;
+}
+
+.text-primary {
+    color: #4c4cf1 !important;
+    /* Warna ungu kebiruan untuk subtitle */
+}
+
+.text-secondary {
+    color: #a0a0c0 !important;
+    /* Warna abu-abu untuk deskripsi */
+}
+
+.feature-icon img {
+    /* Filter ini bisa membantu jika icon Anda berwarna hitam, 
+       agar terlihat lebih terang di background gelap */
+    filter: brightness(1.2);
+}
+
+h2.display-5 {
+    letter-spacing: 2px;
+}
+
+/* Efek Gelap di bawah foto agar teks terbaca */
+.feature-img-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, var(--space-dark), transparent);
+}
+
+/* Kontainer Teks */
+.feature-content {
+    padding: 25px;
+}
+
+/* Efek Hover */
+.feature-box:hover {
+    transform: translateY(-12px);
+    border-color: var(--accent-blue);
+    background: rgba(11, 11, 42, 0.9);
+    box-shadow: 0 15px 35px rgba(0, 210, 255, 0.15);
+}
+
+.feature-box:hover .feature-img-wrapper img {
+    transform: scale(1.1);
+    /* Efek zoom saat card di-hover */
+}
+
+
+
+.tracking-widest {
+    letter-spacing: 5px;
+}
+
+/* Custom Detail Sections */
+.bg-darker {
+    background-color: #08081a;
+}
+
+.phone-mockup img {
+    border: 8px solid #1a1a4b;
+    max-width: 280px;
+    width: 500px;
+}
+
+/* Efek Cahaya Astronot */
+.astro-glow {
+    position: relative;
+    display: inline-block;
+}
+
+.astro-glow::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(157, 80, 187, 0.2) 0%, transparent 70%);
+    z-index: -1;
+    animation: pulse-glow 4s infinite alternate;
+}
+
+@keyframes pulse-glow {
+    from {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+/* Animasi Melayang */
+.floating-img {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #4facfe;
+    text-align: center;
+}
+
+/* Container utama tanpa kotak/card */
+.skills-wrapper {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Jarak antar baris keahlian */
+.skill-item {
+    margin-bottom: 30px;
+}
+
+/* Nama keahlian dan persentase */
+.label-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Background progress bar (garis abu-abu) */
+.bar-container {
+    width: 100%;
+    height: 4px;
+    /* Dibuat tipis agar elegan */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+/* Isi progress bar (yang berwarna) */
+.bar-fill {
+    height: 100%;
+    background: #4facfe;
+    /* Warna biru cerah */
+    box-shadow: 0 0 10px #4facfe;
+    /* Efek neon */
+    border-radius: 2px;
+
+    /* Animasi saat loading */
+    animation: slideIn 25s ease-out;
+}
+
+/* Warna berbeda untuk variasi */
+.purple {
+    background: #7000ff;
+    box-shadow: 0 0 10px #7000ff;
+}
+
+.cyan {
+    background: #00f2fe;
+    box-shadow: 0 0 10px #00f2fe;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0%;
+    }
+}
+
+/* Footer & Landscape */
+.footer-section {
+    background: url('footeriden.png');
+    /* Cari siluet gunung/pohon */
+    position: relative;
+    background: linear-gradient(to top, rgba(22, 27, 68, 0.5) 0%, #050517 100%),
+        url('waallll.png');
+    overflow: hidden;
+
+
+}
+
+.footer-section h4 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.bottom-landscape {
+    height: 150px;
+
+    background-size: cover;
+    background-position: center bottom;
+    opacity: 0.4;
+    margin-top: 50px;
+}
